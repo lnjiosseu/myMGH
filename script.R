@@ -53,13 +53,13 @@ median(duration, na.rm=TRUE) / 365.25
 #Question 3 --------------------------------------------------------------
 
 #a. number of patients deceased
-summary(wide$death==1)
+summary(wide$death==1) #3
 
 #b. Number of patients with recurrences
-summary(wide$recurrence ==1)
+summary(wide$recurrence ==1) #6 (should be 5); see line 33 for issue.
 
 #c. Number of patients who experienced a secondary tumor
-summary(wide$secondary_tumor ==1)
+summary(wide$secondary_tumor ==1) #2
 
 #d. Number of patients that do not have at least 1 follow-up event recorded
-sum(is.na(wide$latest_fup_date))
+sum(is.na(wide$latest_fup_date)) #5
