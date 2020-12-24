@@ -36,12 +36,17 @@ colnames(wide)[3] <- "latest_fup_date"
 
 #Question 2 ----------------------------------------------------------------
 
-Duration = function(radiation_start_date, followup_date) {
-  output = followup_date + radiation_start_date
-  return(output)
-}
-Duration(4, 12)
+library(lubridate)
+end<-mdy(wide$latest_fup_date)
+begin<-mdy(wide$radiation_start_date)
+elapsed.time <- begin %--% end
 
+duration <- as.duration(elapsed.time) / ddays(1)
+duration
+
+min(duration, na.rm=TRUE)
+max(duration, na.rm=TRUE)
+median(duration, na.rm=TRUE) / 365.25
 
 #Question 3 --------------------------------------------------------------
 
