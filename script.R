@@ -48,7 +48,7 @@ duration
 
 min(duration, na.rm=TRUE)
 max(duration, na.rm=TRUE)
-median(duration, na.rm=TRUE) / 365.25  #4.47years
+median(duration, na.rm=TRUE) / 365.25   #4.47years
 
 #Question 3 --------------------------------------------------------------
 
