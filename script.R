@@ -45,14 +45,5 @@ Duration(4, 12)
 
 #Question 3 --------------------------------------------------------------
 
-library(reshape2)
-molted=melt(exam,id.vars=c("ID"))
-molted
-library(tidyverse)
-#wide <- spread(molted, variable, value)
-wide = molted %>% 
-  spread(variable, value)
-wide
-
 
  
