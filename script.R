@@ -14,7 +14,7 @@ exam <- exam[c(1:26, 28:27, 29:35),]
 
 #Question 1 --------------------------------------------------------------------
 
-# a. desired order
+#a. desired order
 
 wide <- exam %>% 
   select('ID', 'consent', 'followup_date', 'radiation_start_date', 'radiation_end_date', 'death_date', 'recurrence_date', 
@@ -32,7 +32,7 @@ wide$recurrence[wide$recurrence==0]<-1 #changed the recurrence value for patien 
 #patient 10 has followup events (rows 27 and 28) switched; I fixed it but that's bc it's a small df.
 #recurrence column shows no '1' even though there are recurrence dates; that's bc the recurrence  does not happen at the last followup.
 
-# b. renaming
+#b. renaming
 colnames(wide)[3] <- "latest_fup_date"
 
 
@@ -52,5 +52,14 @@ median(duration, na.rm=TRUE) / 365.25
 
 #Question 3 --------------------------------------------------------------
 
-# a. 
- 
+#a. number of patients deceased
+summary(wide$death==1)
+
+#b. Number of patients with recurrences
+summary(wide$recurrence ==1)
+
+#c. Number of patients who experienced a secondary tumor
+summary(wide$secondary_tumor ==1)
+
+#d. Number of patients that do not have at least 1 follow-up event recorded
+sum(is.na(wide$latest_fup_date))
