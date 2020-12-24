@@ -55,7 +55,6 @@ colnames(wide)[3] <- "latest_fup_date"
 write.csv(wide, file = "wide.csv", na = "",
           sep = "\t", row.names = F)
 
-
 #Question 2 ----------------------------------------------------------------
 
 #finding follow-up duration
