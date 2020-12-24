@@ -9,7 +9,9 @@ exam <- read_csv("da_exam_file.csv")
 library(dplyr)
 library(tidyverse)
 
+#arranging 'event' values for patient ID = 10 in order
 exam <- exam[c(1:26, 28:27, 29:35),]
+
 #Question 1 --------------------------------------------------------------------
 
 # a. desired order
