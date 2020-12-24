@@ -35,7 +35,8 @@ wide$recurrence[wide$recurrence==0]<-1 #changed the recurrence value for patien 
 colnames(wide)[3] <- "latest_fup_date"
 
 #saving the new simpler format
-write.table(wide, file = "wide.csv")
+write.table(wide, file = "wide.csv",
+            sep = "\t", row.names = F)
 
 
 #Question 2 ----------------------------------------------------------------
