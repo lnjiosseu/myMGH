@@ -42,10 +42,10 @@ wide <- abc %>%
          death = max(death_followup_1, death_followup_2, death_followup_3, death_followup_4, death_followup_5, na.rm=TRUE),
          recurrence = max(recurrence_followup_1, recurrence_followup_2, recurrence_followup_3, recurrence_followup_4, recurrence_followup_5, na.rm=TRUE),
          secondary_tumor = max(secondary_tumor_followup_1, secondary_tumor_followup_2, secondary_tumor_followup_3, secondary_tumor_followup_4, 
-                               secondary_tumor_followup_5, na.rm=TRUE)) %>% #combine columns from same category into a single one
+                               secondary_tumor_followup_5, na.rm=TRUE)) %>% #combine columns from same category into a single one that contains max value
   select('ID', 'consent', 'last_followup_date', 'radiation_start_date', 'radiation_end_date', 'death_date', 'recurrence_date', 
          'secondary_tumor_date', 'death', 'recurrence', 'secondary_tumor') %>% 
-  fill(consent, last_followup_date, radiation_start_date, radiation_end_date, death_date, recurrence_date, secondary_tumor_date) %>% 
+  fill(consent, radiation_start_date, radiation_end_date, death_date, recurrence_date, secondary_tumor_date) %>% 
   slice(n())
 
 #b. renaming the 'followup_date' variable
