@@ -56,11 +56,7 @@ median(duration, na.rm=TRUE) / 365.25
 summary(wide$death==1) #3
 
 #b. Number of patients with recurrences
-<<<<<<< HEAD
 summary(wide$recurrence ==1) #6 (should be 5); see line 33 for issue.
-=======
-summary(wide$recurrence ==1) #6 (should be 5); see line 35 for issue.
->>>>>>> d7afc4a36e6f0aea780b23bc6a11bd75b1876c13
 
 #c. Number of patients who experienced a secondary tumor
 summary(wide$secondary_tumor ==1) #2
