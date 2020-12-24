@@ -35,7 +35,7 @@ wide$recurrence[wide$recurrence==0]<-1 #changed the recurrence value for patien 
 colnames(wide)[3] <- "latest_fup_date"
 
 #saving the new simpler format
-write.table(wide, file = "wide.csv",
+write.csv(wide, file = "wide.csv",
             sep = "\t", row.names = F)
 
 
@@ -61,7 +61,7 @@ median(duration, na.rm=TRUE) / 365.25   #4.47years
 summary(wide$death==1) #3
 
 #b. Number of patients with recurrences
-summary(wide$recurrence ==1) #6 (should be 5); see line 33 for issue.
+summary(wide$recurrence ==1) #6 (should be 5); see line 32 for issue.
 
 #c. Number of patients who experienced a secondary tumor
 summary(wide$secondary_tumor ==1) #2
